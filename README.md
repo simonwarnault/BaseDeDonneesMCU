@@ -42,39 +42,37 @@ WHERE title='Thor'
 ### Requête pour ajouter un film :
 
 ```sql
-INSERT INTO `movies`(`title`) 
-VALUES ('titre du film à ajouter');
+INSERT INTO `movies`(`IDmovies`, `title`, `director`, `realease_date`, `duration`, `created_at`, `updated_at`)
+VALUES (75, "iron man 45","Simon WARNAULT",2060, 200, "", NOW(), NOW());
 ```
 
 ### Requête pour ajouter un acteur :
 
 ```sql
-INSERT INTO `actors`(`Last_Name`,`First_Name`) 
-VALUES ('NOM','PRENOM');
+INSERT INTO `actors`(`IDactors`, `Last_Name`, `First_Name`, `Age`, `created_at`, `updated_at`)
+VALUES (75, "WARNAULT", "Simon", '1996/02/07', NOW(), NOW());
 ```
 
-### Requête pour modifier un film :
+### Requête pour modifier un acteur :
 
 ```sql
-UPDATE movies
-SET title = 'modif',
-    director = 'modif',
-    release_date = 'modif',
-    duration = 'modif',
-WHERE IDmovies = 1(voir le numéro de l'id correspondant à l'acteur)
+UPDATE `actors`
+SET `last_name` = "Downey Jr.", `first_name` = "Robert 2"
+WHERE `id` = 1;
 ```
 
 ### Requête pour supprimer un acteur :
 
 ```sql
-DELETE FROM actors
-WHERE IDactors= 1(voir le numéro de l'id correspondant à l'acteur)
+DELETE FROM `actors`
+WHERE `id` = 1;
 ```
 
 ### Afficher les 3 derniers acteurs ajoutés :
 
 ```sql
-SELECT Last_Name,First_Name,created_at 
-FROM actors 
-ORDER BY created_at DESC LIMIT 3
+SELECT `title`, `created_at`
+FROM `movies` 
+ORDER BY `created_at`
+DESC LIMIT 3;
 ```
