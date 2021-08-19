@@ -58,14 +58,14 @@ VALUES (75, "WARNAULT", "Simon", '1996/02/07', NOW(), NOW());
 ```sql
 UPDATE `actors`
 SET `last_name` = "Downey Jr.", `first_name` = "Robert 2"
-WHERE `id` = 1;
+WHERE actors.First_Name = "Robert"
 ```
 
 ### Requête pour supprimer un acteur :
 
 ```sql
 DELETE FROM `actors`
-WHERE `id` = 1;
+WHERE actors.First_Name = "Robert"
 ```
 
 ### Afficher les 3 derniers acteurs ajoutés :
